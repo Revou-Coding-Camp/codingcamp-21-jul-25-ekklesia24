@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo List</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Todo List</h1>
+
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="Enter a new task" required />
+      <input type="date" id="date-input" required />
+      <select id="status-input" required>
+        <option value="Not Done Yet">Not Done Yet</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Done">Done</option>
+      </select>
+      <input type="text" id="notes-input" placeholder="Notes (optional)" />
+      <button type="submit" class="btn blue">+</button>
+    </form>
+
+    <div class="action-buttons">
+      <button id="delete-selected-btn" class="btn gray">Delete</button>
+      <button id="delete-all-btn" class="btn red">Delete All</button>
+    </div>
+
+    <div id="filter-options">
+      <div>
+        <label>Filter by Due Date:</label>
+        <input type="date" id="filter-date" />
+      </div>
+      <div>
+        <label>Filter by Status:</label>
+        <select id="filter-status">
+          <option value="">-- Select Status --</option>
+          <option value="Not Done Yet">Not Done Yet</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Done">Done</option>
+        </select>
+      </div>
+      <button id="apply-filter" class="btn blue">Apply Filter</button>
+      <button id="reset-filter" class="btn gray">Reset Filter</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Select</th>
+          <th>Task</th>
+          <th>Due Date</th>
+          <th>Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody id="todo-list">
+        <tr><td colspan="5">No task found</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
